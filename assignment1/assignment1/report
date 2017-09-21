@@ -1,0 +1,8 @@
+MapReduce 클래스를 선하면 intermediate변수(과정값)와 result변수(결과값)를 갖는 객체가 생성된다.
+이 객체는 emit_intermediate, emit, execute의 기능을 갖는데
+emit_intermediate는 key값을 통해 처음 나온 key 값은 기본값으로 설정하고 그 후 그와 동일한 key 값을 가진 객체가 나오면 key 값 뒤에 그 객체의 value를 붙인다.
+emit은 객체의 result(결과)에 value를 붙인다.
+execute는 반복문을 통해 line을 읽고 라인마다 mapper를 실행한다.
+ 
+mapper의 경우 같은 key 값을 가지는 data를 모으는 기능이므로 emit_intermediate를 사용해야 하고
+reducer는 같은 key값을 통해 모아진 data를 나열하는 기능이므로 emit을 사용해야 한다.

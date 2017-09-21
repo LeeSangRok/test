@@ -8,10 +8,10 @@ mr = MapReduce.MapReduce()
 
 def mapper(record):
     # TODO: implement this class
-
+	mr.emit_intermediate(record[1], record)
 def reducer(key, list_of_values):
     # TODO: implement this class
-
+	mr.emit(list_of_values)
 # Do not modify below this line
 # =============================
 if __name__ == '__main__':
